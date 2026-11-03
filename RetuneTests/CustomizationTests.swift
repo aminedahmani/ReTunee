@@ -3,6 +3,22 @@ import Foundation
 @testable import Retune
 
 @MainActor struct CustomizationTests {
+    @Test func soundPreferencesPersistWithoutLosingMutedVolume() throws {
+        let name = "SoundSettingsTests-\(UUID())"
+        let store = try #require(UserDefaults(suiteName: name))
+        defer { store.removePersistentDomain(forName: name) }
+        let preferences = UserPreferences(store: store)
+        #expect(preferences.musicEnabled)
+        #expect(preferences.musicVolume == 1)
+        preferences.musicVolume = 0.42
+        preferences.musicEnabled = false
+        let restored = UserPreferences(store: store)
+        #expect(!restored.musicEnabled)
+        #expect(restored.musicVolume == 0.42)
+        #expect(MusicPlayer(store: store).volume == 0.42)
+        restored.musicEnabled = true
+        #expect(UserPreferences(store: store).musicVolume == 0.42)
+    }
     @Test func everyAppearanceIsSelectableAndPersists() throws {
         let name = "ReTuneTests.\(UUID().uuidString)"
         let store = try #require(UserDefaults(suiteName: name))

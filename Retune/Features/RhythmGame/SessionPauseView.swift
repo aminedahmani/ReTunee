@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SessionPauseView: View {
     let track: MusicTrack
+    let musicEnabled: Bool
     @Binding var volume: Double
     let onResume: () -> Void
     let onFinish: () -> Void
@@ -19,11 +20,13 @@ struct SessionPauseView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .accessibilityIdentifier("pause.track")
                     HStack(spacing: 12) {
-                        Image(systemName: volume == 0 ? "speaker.slash.fill" : "speaker.fill")
+                        Image(systemName: !musicEnabled || volume == 0 ? "speaker.slash.fill" : "speaker.fill")
                             .accessibilityHidden(true)
                         Slider(value: $volume, in: 0...1)
+                            .disabled(!musicEnabled)
                             .tint(.white).accessibilityLabel("Music volume")
                             .accessibilityValue("\(Int((volume * 100).rounded())) percent")
+                            .accessibilityHint(musicEnabled ? "" : "Turn Music on in Settings to adjust the volume.")
                             .accessibilityIdentifier("pause.volume")
                         Image(systemName: "speaker.wave.3.fill").accessibilityHidden(true)
                     }

@@ -74,6 +74,24 @@ import AVFoundation
         player.setVolume(.nan)
         #expect(player.volume == 0)
     }
+    @Test func playbackReloadsVolumeChangedInSettings() async throws {
+        let name = "SettingsVolumeTests-\(UUID())"
+        let store = try #require(UserDefaults(suiteName: name))
+        defer { store.removePersistentDomain(forName: name) }
+        store.set(0.8, forKey: "music.volume")
+        let player = MusicPlayer(store: store)
+        defer { player.stop(fade: false) }
+        #expect(player.load(MusicTrack.tracks(for: .anxiety)[0], looping: true))
+        // Settings can change the shared level after the game created its player.
+        store.set(0.35, forKey: "music.volume")
+        player.play()
+        for _ in 0..<100 {
+            if player.isPlaying { break }
+            try await Task.sleep(for: .milliseconds(20))
+        }
+        #expect(player.isPlaying)
+        #expect(player.volume == 0.35)
+    }
     @Test func fadePausesAtTheRightPositionAndCannotCancelAQuickResume() async throws {
         let player = MusicPlayer()
         #expect(player.load(MusicTrack.tracks(for: .anxiety)[0], looping: true))
@@ -103,6 +121,42 @@ import AVFoundation
         #expect(player.isAudioRunning)
         player.stop(fade: false)
         #expect(!player.isAudioRunning)
+    }
+
+    @Test func muteKeepsPlaybackClockAndRestoresSavedLevel() async throws {
+        let name = "MuteTests-\(UUID())"
+        let store = try #require(UserDefaults(suiteName: name))
+        defer { store.removePersistentDomain(forName: name) }
+        store.set(0.42, forKey: "music.volume")
+        store.set(false, forKey: "music.enabled")
+        let player = MusicPlayer(store: store)
+        defer { player.stop(fade: false) }
+        let track = MusicTrack.tracks(for: .sadness)[0]
+        #expect(player.load(track, looping: false))
+        player.play()
+        for _ in 0..<100 {
+            if player.isPlaying { break }
+            try await Task.sleep(for: .milliseconds(20))
+        }
+        #expect(player.isAudioRunning)
+        #expect(player.effectiveVolume == 0)
+        try await Task.sleep(for: .milliseconds(100))
+        #expect(player.currentTime > 0)
+        player.setVolume(0.31)
+        #expect(player.effectiveVolume == 0)
+        #expect(player.volume == 0.31)
+        player.pause(fade: false)
+        let pausedAt = player.currentTime
+        store.set(true, forKey: "music.enabled")
+        player.play()
+        for _ in 0..<100 {
+            if player.isPlaying { break }
+            try await Task.sleep(for: .milliseconds(20))
+        }
+        #expect(player.isAudioRunning)
+        #expect(player.effectiveVolume == 0.31)
+        #expect(player.trackID == track.id)
+        #expect(player.currentTime >= pausedAt)
     }
 
 }

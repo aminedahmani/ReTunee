@@ -83,7 +83,8 @@ struct RhythmGameView: View {
         } message: { Text(music.errorMessage ?? "Please choose another track.") }
         .sheet(isPresented: $showingSettings) { SettingsView() }
         .sheet(isPresented: $showingPause, onDismiss: closePausePanel) {
-            SessionPauseView(track: track, volume: Binding(get: { music.volume }, set: { music.setVolume($0) }),
+            SessionPauseView(track: track, musicEnabled: music.musicEnabled,
+                             volume: Binding(get: { music.volume }, set: { music.setVolume($0) }),
                              onResume: { showingPause = false }, onFinish: {
                 finishAfterPause = true
                 showingPause = false

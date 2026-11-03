@@ -46,6 +46,12 @@ nonisolated final class RetuneUITests: XCTestCase {
     }
     @MainActor func testPauseVolumeKeepsSelectedMusic() {
         let app = launch()
+        app.buttons["home.settings"].tap()
+        let musicToggle = app.switches["settings.music"]
+        XCTAssertTrue(musicToggle.waitForExistence(timeout: 5))
+        let musicWasEnabled = musicToggle.value as? String == "1"
+        if !musicWasEnabled { tapSettingsSwitch(musicToggle) }
+        app.buttons["settings.close"].tap()
         app.buttons["mood.anger"].tap()
         XCTAssertTrue(app.buttons["music.select.1"].waitForExistence(timeout: 5))
         app.buttons["music.select.1"].tap()
@@ -67,11 +73,33 @@ nonisolated final class RetuneUITests: XCTestCase {
         XCTAssertTrue(app.buttons["game.orb"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.buttons["game.orb"].isEnabled)
         XCTAssertEqual(app.buttons["game.pause"].value as? String, "Cool Air")
+        app.buttons["game.settings"].tap()
+        XCTAssertTrue(musicToggle.waitForExistence(timeout: 5))
+        XCTAssertEqual(app.sliders["settings.volume"].value as? String, savedVolume)
+        tapSettingsSwitch(musicToggle)
+        dismissSettings(app)
         app.buttons["game.pause"].tap()
         XCTAssertTrue(volume.waitForExistence(timeout: 5))
+        XCTAssertFalse(volume.isEnabled)
+        XCTAssertEqual(volume.value as? String, savedVolume)
+        app.buttons["pause.resume"].tap()
+        XCTAssertTrue(app.buttons["game.orb"].waitForExistence(timeout: 5))
+        app.buttons["game.settings"].tap()
+        XCTAssertTrue(musicToggle.waitForExistence(timeout: 5))
+        tapSettingsSwitch(musicToggle)
+        dismissSettings(app)
+        app.buttons["game.pause"].tap()
+        XCTAssertTrue(volume.waitForExistence(timeout: 5))
+        XCTAssertTrue(volume.isEnabled)
         XCTAssertEqual(volume.value as? String, savedVolume)
         app.buttons["pause.finish"].tap()
         XCTAssertTrue(app.buttons["mood.anxiety"].waitForExistence(timeout: 5))
+        app.buttons["home.settings"].tap()
+        let settingsVolume = app.sliders["settings.volume"]
+        XCTAssertTrue(settingsVolume.waitForExistence(timeout: 5))
+        XCTAssertEqual(settingsVolume.value as? String, savedVolume)
+        if !musicWasEnabled { tapSettingsSwitch(musicToggle) }
+        app.buttons["settings.close"].tap()
     }
     @MainActor func testOnboardingOnlyOnFirstLaunch() {
         let app = XCUIApplication()
@@ -128,12 +156,21 @@ nonisolated final class RetuneUITests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
+    @MainActor private func tapSettingsSwitch(_ toggle: XCUIElement) {
+        let expected = toggle.value as? String == "1" ? "0" : "1"
+        // SwiftUI exposes the whole Form row as the switch element. Tap the
+        // trailing switch itself; tapping the empty row center does not toggle it.
+        toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.9, dy: 0.5)).tap()
+        let changed = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "value == %@", expected), object: toggle)
+        XCTAssertEqual(XCTWaiter.wait(for: [changed], timeout: 3), .completed)
+    }
     @MainActor private func enableStationaryControl(_ app: XCUIApplication) {
         guard !app.buttons["game.stationaryTap"].exists else { return }
         app.buttons["game.settings"].tap()
-        let toggle = app.buttons["settings.stationaryControl"]
+        let toggle = app.switches["settings.stationaryControl"]
         XCTAssertTrue(toggle.waitForExistence(timeout: 5))
-        if toggle.value as? String != "On" { toggle.tap() }
+        if toggle.value as? String != "1" { tapSettingsSwitch(toggle) }
         dismissSettings(app)
         XCTAssertTrue(app.buttons["game.stationaryTap"].waitForExistence(timeout: 5))
     }
@@ -142,7 +179,7 @@ nonisolated final class RetuneUITests: XCTestCase {
         XCTAssertTrue(close.waitForExistence(timeout: 5))
         close.tap()
         let resumed = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
-            !app.buttons["settings.haptics"].exists && app.buttons["game.orb"].exists && app.buttons["game.orb"].isEnabled
+            !app.switches["settings.haptics"].exists && app.buttons["game.orb"].exists && app.buttons["game.orb"].isEnabled
         }, object: nil)
         XCTAssertEqual(XCTWaiter.wait(for: [resumed], timeout: 5), .completed)
     }
@@ -191,7 +228,7 @@ nonisolated final class RetuneUITests: XCTestCase {
         XCTAssertTrue(app.buttons["game.orb"].waitForExistence(timeout: 3))
         XCTAssertEqual(app.buttons.matching(identifier: "game.orb").count, 1)
         app.buttons["game.settings"].tap()
-        XCTAssertTrue(app.buttons["settings.haptics"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.switches["settings.haptics"].waitForExistence(timeout: 5))
         dismissSettings(app)
         XCTAssertTrue(app.buttons["game.orb"].isEnabled)
         XCUIDevice.shared.press(.home)
@@ -215,30 +252,40 @@ nonisolated final class RetuneUITests: XCTestCase {
     @MainActor func testSettingsAndExploreSheets() {
         let app = launch()
         app.buttons["home.settings"].tap()
-        XCTAssertTrue(app.buttons["settings.haptics"].waitForExistence(timeout: 5))
-        let controls = ["settings.haptics", "settings.reduceMotion", "settings.backgroundAnimation", "settings.stationaryControl"]
-        let originalValues = controls.map { app.buttons[$0].value as? String }
+        XCTAssertTrue(app.switches["settings.haptics"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.navigationBars["Settings"].exists)
+        XCTAssertEqual(app.buttons["settings.close"].label, "Done")
+        let controls = ["settings.music", "settings.haptics", "settings.reduceMotion", "settings.backgroundAnimation", "settings.stationaryControl"]
+        let originalValues = controls.map { app.switches[$0].value as? String }
+        let music = app.switches["settings.music"]
+        if music.value as? String != "1" { tapSettingsSwitch(music) }
+        let volume = app.sliders["settings.volume"]
+        XCTAssertTrue(volume.isEnabled && volume.isHittable)
+        volume.adjust(toNormalizedSliderPosition: 0.55)
+        let savedVolume = volume.value as? String
         for id in controls {
-            let button = app.buttons[id]
-            let previous = button.value as? String
-            button.tap()
-            XCTAssertEqual(button.value as? String, previous == "On" ? "Off" : "On")
+            let toggle = app.switches[id]
+            let previous = toggle.value as? String
+            tapSettingsSwitch(toggle)
+            XCTAssertEqual(toggle.value as? String, previous == "1" ? "0" : "1")
         }
-        let changedValues = controls.map { app.buttons[$0].value as? String }
-        for id in ["settings.intensity", "settings.glow"] {
-            let slider = app.sliders[id]
-            XCTAssertTrue(slider.isHittable)
-            slider.adjust(toNormalizedSliderPosition: 0.5)
-        }
-        capture("Icon settings")
+        let changedValues = controls.map { app.switches[$0].value as? String }
+        XCTAssertFalse(volume.isEnabled)
+        capture("Standard Settings")
         app.buttons["settings.close"].tap()
+        app.terminate()
+        app.launch()
         XCTAssertTrue(app.buttons["home.settings"].waitForExistence(timeout: 5))
         app.buttons["home.settings"].tap()
         XCTAssertTrue(app.buttons["settings.close"].waitForExistence(timeout: 5))
-        XCTAssertEqual(controls.map { app.buttons[$0].value as? String }, changedValues)
-        // Leave the user's switches as they were before exercising them.
-        for (index, id) in controls.enumerated() where app.buttons[id].value as? String != originalValues[index] {
-            app.buttons[id].tap()
+        XCTAssertEqual(controls.map { app.switches[$0].value as? String }, changedValues)
+        XCTAssertEqual(volume.value as? String, savedVolume)
+        tapSettingsSwitch(music)
+        XCTAssertTrue(volume.isEnabled)
+        XCTAssertEqual(volume.value as? String, savedVolume)
+        // Restore each switch after verifying persistence through an app relaunch.
+        for (index, id) in controls.enumerated() where app.switches[id].value as? String != originalValues[index] {
+            tapSettingsSwitch(app.switches[id])
         }
         app.buttons["settings.close"].tap()
         app.buttons["home.explore"].tap()
@@ -250,6 +297,26 @@ nonisolated final class RetuneUITests: XCTestCase {
         app.swipeUp()
         app.buttons["effect.Minimal"].tap()
         app.navigationBars["Explore"].swipeDown()
+        XCTAssertTrue(app.buttons["mood.anxiety"].waitForExistence(timeout: 5))
+    }
+    @MainActor func testSettingsAtLargestTextSize() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launch()
+        if app.buttons["onboarding.skip"].waitForExistence(timeout: 2) { app.buttons["onboarding.skip"].tap() }
+        XCTAssertTrue(app.buttons["home.settings"].waitForExistence(timeout: 5))
+        app.buttons["home.settings"].tap()
+        XCTAssertTrue(app.switches["settings.music"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.switches["settings.music"].isHittable)
+        let fixedTap = app.switches["settings.stationaryControl"]
+        for _ in 0..<6 {
+            if fixedTap.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(fixedTap.isHittable)
+        XCTAssertTrue(app.buttons["settings.close"].isHittable)
+        capture("Settings at largest text size")
+        app.buttons["settings.close"].tap()
         XCTAssertTrue(app.buttons["mood.anxiety"].waitForExistence(timeout: 5))
     }
     @MainActor func testLandscapeLayout() {

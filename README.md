@@ -18,7 +18,7 @@ The project uses Swift 6 and includes its artwork and twelve music tracks locall
 - Preview three tracks for a mood and choose one before starting. The selected track stays fixed during the game.
 - Each tap reveals the next orb. Anxiety, Anger, and Disappointment gradually slow down over the track; Sadness gradually speeds up.
 - Pause to adjust volume, resume, or finish with **I feel better**.
-- Settings uses icon buttons and sliders, with VoiceOver labels. System and app Reduce Motion preferences are respected.
+- Settings uses native grouped controls for sound, experience, and accessibility. Music can be muted without changing game timing, and volume is shared with the pause menu. System and app Reduce Motion preferences are respected.
 
 ## Checks
 

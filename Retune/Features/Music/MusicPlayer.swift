@@ -25,6 +25,7 @@ final class MusicPlayer: NSObject, AVAudioPlayerDelegate {
     private(set) var isInterrupted = false
     private(set) var errorMessage: String?
     private(set) var volume: Double
+    private(set) var musicEnabled: Bool
     @ObservationIgnored private let store: UserDefaults
     @ObservationIgnored private var player: AVAudioPlayer?
     @ObservationIgnored private var activationTask: Task<Void, Never>?
@@ -34,11 +35,13 @@ final class MusicPlayer: NSObject, AVAudioPlayerDelegate {
     var currentTime: TimeInterval { fading?.position ?? player?.currentTime ?? 0 }
     var duration: TimeInterval { player?.duration ?? 0 }
     var isAudioRunning: Bool { player?.isPlaying ?? fading?.player.isPlaying ?? false }
+    var effectiveVolume: Double { musicEnabled ? volume : 0 }
 
     init(store: UserDefaults = .standard) {
         self.store = store
         let saved = store.object(forKey: "music.volume") as? Double ?? 1
         volume = saved.isFinite ? min(1, max(0, saved)) : 1
+        musicEnabled = store.object(forKey: "music.enabled") as? Bool ?? true
         super.init()
         NotificationCenter.default.addObserver(self, selector: #selector(interrupted(_:)),
             name: AVAudioSession.interruptionNotification, object: nil)
@@ -68,9 +71,14 @@ final class MusicPlayer: NSObject, AVAudioPlayerDelegate {
         guard value.isFinite else { return }
         volume = min(1, max(0, value))
         store.set(volume, forKey: "music.volume")
-        if isPlaying { player?.setVolume(Float(volume), fadeDuration: 0.08) }
+        musicEnabled = store.object(forKey: "music.enabled") as? Bool ?? true
+        if isPlaying { player?.setVolume(Float(effectiveVolume), fadeDuration: 0.08) }
     }
     func play() {
+        // Settings can change while this player is paused behind its sheet.
+        let saved = store.object(forKey: "music.volume") as? Double ?? 1
+        volume = saved.isFinite ? min(1, max(0, saved)) : 1
+        musicEnabled = store.object(forKey: "music.enabled") as? Bool ?? true
         guard !isPlaying, playbackRequest == nil, !isInterrupted, let player else { return }
         finishFade()
         let request = UUID()
@@ -84,7 +92,8 @@ final class MusicPlayer: NSObject, AVAudioPlayerDelegate {
                 }
                 player.volume = 0
                 guard player.play() else { throw CocoaError(.fileReadCorruptFile) }
-                player.setVolume(Float(self.volume), fadeDuration: 0.35)
+                // Muting preserves the audio clock and the selected track's pacing.
+                player.setVolume(Float(self.effectiveVolume), fadeDuration: 0.35)
                 self.isPlaying = true
             } catch {
                 guard !Task.isCancelled, let self, self.playbackRequest == request else { return }

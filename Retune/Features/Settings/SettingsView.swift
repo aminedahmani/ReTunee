@@ -5,80 +5,85 @@ struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 28) {
-                HStack {
-                    Spacer()
-                    Button { dismiss() } label: {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 17, weight: .medium))
-                            .frame(width: 48, height: 48).calmSurface(radius: 24)
+        NavigationStack {
+            Form {
+                Section("Sound") {
+                    settingToggle("Music", symbol: "speaker.wave.2", color: .blue,
+                                  isOn: preferences.$musicEnabled, id: "settings.music")
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Volume")
+                        HStack(spacing: 12) {
+                            Image(systemName: preferences.musicEnabled && volume.wrappedValue > 0
+                                  ? "speaker.fill" : "speaker.slash.fill")
+                                .accessibilityHidden(true)
+                            Slider(value: volume, in: 0...1)
+                                .tint(.blue)
+                                .disabled(!preferences.musicEnabled)
+                                .accessibilityLabel("Music volume")
+                                .accessibilityValue("\(Int((volume.wrappedValue * 100).rounded())) percent")
+                                .accessibilityHint(preferences.musicEnabled ? "" : "Turn Music on to adjust the volume.")
+                                .accessibilityIdentifier("settings.volume")
+                            Image(systemName: "speaker.wave.3.fill")
+                                .accessibilityHidden(true)
+                        }
+                        .foregroundStyle(.secondary)
+                        .frame(minHeight: 44)
                     }
-                    .accessibilityLabel("Close settings")
-                    .accessibilityIdentifier("settings.close")
+                    .padding(.vertical, 4)
                 }
 
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                    settingButton("Gentle haptics", symbol: "waveform", isOn: preferences.$haptics, id: "settings.haptics")
-                    settingButton("Reduce motion", symbol: "pause.circle", isOn: preferences.$reduceMotion, id: "settings.reduceMotion")
-                    settingButton("Animate background", symbol: "sparkles", isOn: preferences.$backgroundAnimation, id: "settings.backgroundAnimation")
-                    settingButton("Fixed tap button", symbol: "hand.tap", isOn: preferences.$stationaryControl, id: "settings.stationaryControl")
+                Section("Experience") {
+                    settingToggle("Haptics", symbol: "iphone.radiowaves.left.and.right", color: .orange,
+                                  isOn: preferences.$haptics, id: "settings.haptics")
+                    settingToggle("Background animation", symbol: "sparkles", color: .purple,
+                                  isOn: preferences.$backgroundAnimation, id: "settings.backgroundAnimation")
                 }
 
-                VStack(spacing: 24) {
-                    settingSlider("Visual intensity", value: preferences.$intensity, range: 0.2...1,
-                                  low: "sun.min", high: "sun.max.fill", id: "settings.intensity")
-                    settingSlider("Orb glow", value: preferences.$glow, range: 0...1,
-                                  low: "circle", high: "sparkle", id: "settings.glow")
+                Section("Accessibility") {
+                    settingToggle("Reduce Motion", symbol: "circle.dotted", color: .blue,
+                                  isOn: preferences.$reduceMotion, id: "settings.reduceMotion")
+                    settingToggle("Fixed tap button", symbol: "hand.tap", color: .blue,
+                                  isOn: preferences.$stationaryControl, id: "settings.stationaryControl")
                 }
-                .padding(20).calmSurface(radius: 26)
             }
-            .padding(24)
-            .frame(maxWidth: 480)
-            .frame(maxWidth: .infinity)
-        }
-        .scrollBounceBehavior(.basedOnSize)
-        .background(ReTuneTheme.midnight)
-        .buttonStyle(QuietButtonStyle())
-        .tint(Mood.disappointment.accent)
-        .preferredColorScheme(.dark)
-        .presentationDragIndicator(.visible)
-        .presentationDetents([.large])
-    }
-
-    private func settingButton(_ title: String, symbol: String, isOn: Binding<Bool>, id: String) -> some View {
-        Button { isOn.wrappedValue.toggle() } label: {
-            Image(systemName: symbol)
-                .font(.system(size: 30, weight: .regular))
-                .foregroundStyle(isOn.wrappedValue ? .white : ReTuneTheme.secondary)
-                .frame(maxWidth: .infinity, minHeight: 100)
-                .background(isOn.wrappedValue ? Mood.disappointment.accent.opacity(0.2) : .clear,
-                            in: RoundedRectangle(cornerRadius: 26))
-                .calmSurface(radius: 26)
-                .overlay(alignment: .topTrailing) {
-                    Image(systemName: isOn.wrappedValue ? "checkmark.circle.fill" : "circle")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(isOn.wrappedValue ? .white : ReTuneTheme.secondary)
-                        .padding(12)
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                        .accessibilityIdentifier("settings.close")
                 }
+            }
         }
-        .accessibilityLabel(title)
-        .accessibilityValue(isOn.wrappedValue ? "On" : "Off")
-        .accessibilityHint("Double-tap to toggle.")
-        .accessibilityIdentifier(id)
+        .tint(.blue)
+        .preferredColorScheme(.dark)
+        .presentationDetents([.large])
+        .presentationDragIndicator(.hidden)
     }
 
-    private func settingSlider(_ title: String, value: Binding<Double>, range: ClosedRange<Double>,
-                               low: String, high: String, id: String) -> some View {
-        HStack(spacing: 14) {
-            Image(systemName: low).frame(width: 24).accessibilityHidden(true)
-            Slider(value: value, in: range, step: 0.05)
-                .accessibilityLabel(title)
-                .accessibilityValue("\(Int((value.wrappedValue * 100).rounded())) percent")
-                .accessibilityIdentifier(id)
-            Image(systemName: high).frame(width: 24).accessibilityHidden(true)
+    private var volume: Binding<Double> {
+        Binding {
+            let saved = preferences.musicVolume
+            return saved.isFinite ? min(1, max(0, saved)) : 1
+        } set: { preferences.musicVolume = $0 }
+    }
+
+    private func settingToggle(_ title: String, symbol: String, color: Color,
+                               isOn: Binding<Bool>, id: String) -> some View {
+        Toggle(isOn: isOn) {
+            HStack(spacing: 12) {
+                Image(systemName: symbol)
+                    .font(.system(size: 20))
+                    .foregroundStyle(color)
+                    .frame(width: 26)
+                    .accessibilityHidden(true)
+                Text(title)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .frame(minHeight: 44)
         }
-        .foregroundStyle(.white)
-        .frame(minHeight: 44)
+        .toggleStyle(.switch)
+        .tint(.green)
+        .accessibilityIdentifier(id)
     }
 }

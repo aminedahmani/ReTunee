@@ -34,6 +34,8 @@ struct UserPreferences: DynamicProperty {
     @AppStorage var theme: UniverseTheme
     @AppStorage var orbStyle: OrbStyle
     @AppStorage var effect: VisualEffect
+    @AppStorage var musicEnabled: Bool
+    @AppStorage var musicVolume: Double
     @AppStorage var haptics: Bool
     @AppStorage var reduceMotion: Bool
     @AppStorage var backgroundAnimation: Bool
@@ -45,6 +47,8 @@ struct UserPreferences: DynamicProperty {
         _theme = AppStorage(wrappedValue: .midnight, "appearance.theme", store: store)
         _orbStyle = AppStorage(wrappedValue: .glass, "appearance.orb", store: store)
         _effect = AppStorage(wrappedValue: .ripple, "appearance.effect", store: store)
+        _musicEnabled = AppStorage(wrappedValue: true, "music.enabled", store: store)
+        _musicVolume = AppStorage(wrappedValue: 1, "music.volume", store: store)
         _haptics = AppStorage(wrappedValue: true, "settings.haptics", store: store)
         _reduceMotion = AppStorage(wrappedValue: false, "settings.reduceMotion", store: store)
         _backgroundAnimation = AppStorage(wrappedValue: true, "settings.backgroundAnimation", store: store)
