@@ -80,7 +80,7 @@ struct RhythmGameView: View {
             set: { if !$0 { music.clearError() } }
         )) {
             Button("Back to moods", action: endExperience)
-        } message: { Text(music.errorMessage ?? "Please choose another track.") }
+        } message: { Text(music.errorMessage ?? String(localized: "Please choose another track.")) }
         .sheet(isPresented: $showingSettings) { SettingsView() }
         .sheet(isPresented: $showingPause, onDismiss: closePausePanel) {
             SessionPauseView(track: track, musicEnabled: music.musicEnabled,
@@ -152,8 +152,8 @@ struct RhythmGameView: View {
             Button(action: endExperience) {
                 Image(systemName: "chevron.left").frame(width: 44, height: 44).calmSurface(radius: 22)
             }
-            .accessibilityLabel("Back to moods")
-            .accessibilityHint("Ends this experience and returns to mood selection.")
+            .accessibilityLabel(String(localized: "Back to moods"))
+            .accessibilityHint(String(localized: "Ends this experience and returns to mood selection."))
             .accessibilityIdentifier("game.exit")
             Text(model.mood.title)
                 .font(.system(.headline, design: .rounded, weight: .medium))
@@ -167,13 +167,13 @@ struct RhythmGameView: View {
             } label: {
                 Image(systemName: "pause").frame(width: 44, height: 44).calmSurface(radius: 22)
             }
-            .accessibilityLabel("Pause experience")
+            .accessibilityLabel(String(localized: "Pause experience"))
             .accessibilityValue(track.title)
             .accessibilityIdentifier("game.pause")
             Button { showingSettings = true } label: {
                 Image(systemName: "gearshape").frame(width: 44, height: 44).calmSurface(radius: 22)
             }
-            .accessibilityLabel("Settings").accessibilityIdentifier("game.settings")
+            .accessibilityLabel(String(localized: "Settings")).accessibilityIdentifier("game.settings")
         }
         .padding(.top, 12).padding(.bottom, 8)
     }
@@ -188,8 +188,8 @@ struct RhythmGameView: View {
                         .calmSurface(radius: 28)
                 }
                 .disabled(!model.pacing.isRunning || model.activeOrb == nil)
-                .accessibilityLabel("Tap orb")
-                .accessibilityHint("Releases the current orb from this fixed button.")
+                .accessibilityLabel(String(localized: "Tap orb"))
+                .accessibilityHint(String(localized: "Releases the current orb from this fixed button."))
                 .accessibilityIdentifier("game.stationaryTap")
             }
         }

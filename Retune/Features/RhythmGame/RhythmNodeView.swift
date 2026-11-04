@@ -37,8 +37,8 @@ struct RhythmNodeView: View {
             Button(action: action) {
                 Image(systemName: "circle.fill")
             }
-                .accessibilityLabel("Glowing orb")
-                .accessibilityHint("Releases this light and reveals another. Take your time.")
+                .accessibilityLabel(String(localized: "Glowing orb"))
+                .accessibilityHint(String(localized: "Releases this light and reveals another. Take your time."))
                 .accessibilityIdentifier("game.orb")
         }
     }

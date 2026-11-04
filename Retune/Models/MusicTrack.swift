@@ -9,10 +9,10 @@ struct MusicTrack: Identifiable, Hashable {
     var title: String {
         let titles: [String]
         switch mood {
-        case .anxiety: titles = ["Stillness", "Drift", "Quiet Sky"]
-        case .anger: titles = ["Cool Air", "Soft Ember", "Release"]
-        case .sadness: titles = ["First Light", "Daybreak", "Open Sky"]
-        case .disappointment: titles = ["New Leaf", "Small Steps", "Begin Again"]
+        case .anxiety: titles = [String(localized: "Stillness"), String(localized: "Drift"), String(localized: "Quiet Sky")]
+        case .anger: titles = [String(localized: "Cool Air"), String(localized: "Soft Ember"), String(localized: "Release")]
+        case .sadness: titles = [String(localized: "First Light"), String(localized: "Daybreak"), String(localized: "Open Sky")]
+        case .disappointment: titles = [String(localized: "New Leaf"), String(localized: "Small Steps"), String(localized: "Begin Again")]
         }
         return titles[number - 1]
     }

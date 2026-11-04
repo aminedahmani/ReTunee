@@ -19,9 +19,9 @@ struct SettingsView: View {
                             Slider(value: volume, in: 0...1)
                                 .tint(.blue)
                                 .disabled(!preferences.musicEnabled)
-                                .accessibilityLabel("Music volume")
-                                .accessibilityValue("\(Int((volume.wrappedValue * 100).rounded())) percent")
-                                .accessibilityHint(preferences.musicEnabled ? "" : "Turn Music on to adjust the volume.")
+                                .accessibilityLabel(String(localized: "Music volume"))
+                                .accessibilityValue(String(localized: "\(Int((volume.wrappedValue * 100).rounded())) percent"))
+                                .accessibilityHint(preferences.musicEnabled ? "" : String(localized: "Turn Music on to adjust the volume."))
                                 .accessibilityIdentifier("settings.volume")
                             Image(systemName: "speaker.wave.3.fill")
                                 .accessibilityHidden(true)
@@ -68,7 +68,7 @@ struct SettingsView: View {
         } set: { preferences.musicVolume = $0 }
     }
 
-    private func settingToggle(_ title: String, symbol: String, color: Color,
+    private func settingToggle(_ title: LocalizedStringKey, symbol: String, color: Color,
                                isOn: Binding<Bool>, id: String) -> some View {
         Toggle(isOn: isOn) {
             HStack(spacing: 12) {

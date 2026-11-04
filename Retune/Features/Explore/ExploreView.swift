@@ -17,11 +17,11 @@ struct ExploreView: View {
                                 VStack(alignment: .leading, spacing: 8) {
                                     StarfieldView(theme: theme, intensity: 1)
                                         .frame(height: 84).clipShape(RoundedRectangle(cornerRadius: 17))
-                                    selectionLabel(theme.rawValue, selected: preferences.theme == theme)
+                                    selectionLabel(theme.title, selected: preferences.theme == theme)
                                 }
                                 .padding(12).calmSurface(radius: 23)
                             }
-                            .accessibilityLabel(theme.rawValue)
+                            .accessibilityLabel(theme.title)
                             .accessibilityAddTraits(preferences.theme == theme ? .isSelected : [])
                             .accessibilityIdentifier("theme.\(theme.id)")
                         }
@@ -33,11 +33,11 @@ struct ExploreView: View {
                                 VStack(alignment: .leading, spacing: 0) {
                                     GlassOrbStyle(color: Mood.disappointment.accent, style: style, glow: preferences.glow)
                                         .frame(height: 106)
-                                    selectionLabel(style.rawValue, selected: preferences.orbStyle == style)
+                                    selectionLabel(style.title, selected: preferences.orbStyle == style)
                                 }
                                 .padding(12).calmSurface(radius: 23)
                             }
-                            .accessibilityLabel(style.rawValue)
+                            .accessibilityLabel(style.title)
                             .accessibilityAddTraits(preferences.orbStyle == style ? .isSelected : [])
                             .accessibilityIdentifier("orbStyle.\(style.id)")
                         }
@@ -48,11 +48,11 @@ struct ExploreView: View {
                             Button { preferences.effect = effect } label: {
                                 HStack(spacing: 12) {
                                     Image(systemName: effect.symbol).frame(width: 24)
-                                    selectionLabel(effect.rawValue, selected: preferences.effect == effect)
+                                    selectionLabel(effect.title, selected: preferences.effect == effect)
                                 }
                                 .padding(18).calmSurface(radius: 22)
                             }
-                            .accessibilityLabel(effect.rawValue)
+                            .accessibilityLabel(effect.title)
                             .accessibilityAddTraits(preferences.effect == effect ? .isSelected : [])
                             .accessibilityIdentifier("effect.\(effect.id)")
                         }

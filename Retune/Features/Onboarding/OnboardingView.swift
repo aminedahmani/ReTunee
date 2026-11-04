@@ -67,19 +67,29 @@ struct OnboardingView: View {
     var isReview = false
     let onFinish: () -> Void
     @State private var step = 0
-    private let pages: [(title: String, detail: String, symbol: String, mood: Mood)] = [
-        ("Choose your mood", "Start with how you feel: Anxiety, Anger, Sadness, or Disappointment.", "sparkles", .anxiety),
-        ("Find your sound", "Preview three tracks for your mood. Choose your favorite and tap Start.", "music.note", .disappointment),
-        ("Tap the light", "Each tap reveals the next light. Anxiety, Anger, and Disappointment slow down. Sadness gently speeds up.", "hand.tap", .sadness),
-        ("Make it yours", "Pause to adjust volume. Choose “I feel better” whenever you want to finish.", "pause.fill", .anger)
-    ]
+    private var pages: [(title: String, detail: String, symbol: String, mood: Mood)] {
+        [
+            (String(localized: "Choose your mood"),
+             String(localized: "Start with how you feel: Anxiety, Anger, Sadness, or Disappointment."),
+             "sparkles", .anxiety),
+            (String(localized: "Find your sound"),
+             String(localized: "Preview three tracks for your mood. Choose your favorite and tap Start."),
+             "music.note", .disappointment),
+            (String(localized: "Tap the light"),
+             String(localized: "Each tap reveals the next light. Anxiety, Anger, and Disappointment slow down. Sadness gently speeds up."),
+             "hand.tap", .sadness),
+            (String(localized: "Make it yours"),
+             String(localized: "Pause to adjust volume. Choose “I feel better” whenever you want to finish."),
+             "pause.fill", .anger)
+        ]
+    }
     var body: some View {
         let page = pages[step]
         VStack(spacing: 0) {
             HStack {
                 Text("ReTune").font(.system(.headline, design: .rounded))
                 Spacer()
-                Button(isReview ? "Close" : "Skip", action: onFinish)
+                Button(isReview ? String(localized: "Close") : String(localized: "Skip"), action: onFinish)
                     .frame(minWidth: 44, minHeight: 44)
                     .accessibilityIdentifier("onboarding.skip")
             }
@@ -113,11 +123,11 @@ struct OnboardingView: View {
                     }
                 }
                 .accessibilityElement(children: .ignore)
-                .accessibilityLabel("Step \(step + 1) of \(pages.count)")
+                .accessibilityLabel(String(localized: "Step \(step + 1) of \(pages.count)"))
                 Button {
                     if step == pages.count - 1 { onFinish() } else { step += 1 }
                 } label: {
-                    Text(step == pages.count - 1 ? (isReview ? "Done" : "Get started") : "Next")
+                    Text(step == pages.count - 1 ? (isReview ? String(localized: "Done") : String(localized: "Get started")) : String(localized: "Next"))
                         .font(.system(.headline, design: .rounded))
                         .frame(maxWidth: .infinity, minHeight: 56)
                         .foregroundStyle(ReTuneTheme.midnight).background(.white, in: Capsule())

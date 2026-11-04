@@ -23,7 +23,7 @@ struct MoodCardView: View {
         }
         .buttonStyle(QuietButtonStyle())
         .accessibilityLabel(mood.title)
-        .accessibilityHint("Opens a gentle, endless relaxation experience. \(mood.invitation)")
+        .accessibilityHint(String(localized: "Opens a gentle, endless relaxation experience. \(mood.invitation)"))
         .accessibilityIdentifier("mood.\(mood.rawValue)")
     }
 
