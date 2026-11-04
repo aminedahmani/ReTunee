@@ -40,7 +40,7 @@ struct LaunchAnimationView: View {
             .opacity(1 - dissolve)
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("ReTune")
-            .accessibilityHint("Skip opening animation.")
+            .accessibilityHint(String(localized: "Skip opening animation."))
             .accessibilityIdentifier("launch.animation")
         }
         .ignoresSafeArea()

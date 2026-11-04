@@ -3,6 +3,14 @@ import SwiftUI
 enum UniverseTheme: String, CaseIterable, Identifiable {
     case midnight = "Midnight Universe", nebula = "Soft Nebula", ocean = "Deep Ocean", aurora = "Aurora"
     var id: String { rawValue }
+    var title: String {
+        switch self {
+        case .midnight: String(localized: "Midnight Universe")
+        case .nebula: String(localized: "Soft Nebula")
+        case .ocean: String(localized: "Deep Ocean")
+        case .aurora: String(localized: "Aurora")
+        }
+    }
     var tint: Color {
         switch self {
         case .midnight: Color(hex: 0x44467C)
@@ -15,10 +23,26 @@ enum UniverseTheme: String, CaseIterable, Identifiable {
 enum OrbStyle: String, CaseIterable, Identifiable {
     case glass = "Glass", glow = "Soft Glow", pearl = "Pearl", nebula = "Nebula"
     var id: String { rawValue }
+    var title: String {
+        switch self {
+        case .glass: String(localized: "Glass")
+        case .glow: String(localized: "Soft Glow")
+        case .pearl: String(localized: "Pearl")
+        case .nebula: String(localized: "Nebula")
+        }
+    }
 }
 enum VisualEffect: String, CaseIterable, Identifiable {
     case sparkles = "Gentle Sparkles", ripple = "Soft Ripple", dust = "Floating Dust", minimal = "Minimal"
     var id: String { rawValue }
+    var title: String {
+        switch self {
+        case .sparkles: String(localized: "Gentle Sparkles")
+        case .ripple: String(localized: "Soft Ripple")
+        case .dust: String(localized: "Floating Dust")
+        case .minimal: String(localized: "Minimal")
+        }
+    }
     var symbol: String {
         switch self {
         case .sparkles: "sparkles"

@@ -9,7 +9,7 @@ struct MusicSelectionView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.scenePhase) private var scenePhase
 
-    init(mood: Mood, initialTrack: MusicTrack? = nil, startLabel: String = "Start", onStart: @escaping (MusicTrack) -> Void) {
+    init(mood: Mood, initialTrack: MusicTrack? = nil, startLabel: String = String(localized: "Start"), onStart: @escaping (MusicTrack) -> Void) {
         self.mood = mood
         self.startLabel = startLabel
         self.onStart = onStart
@@ -23,7 +23,7 @@ struct MusicSelectionView: View {
                 Button { dismiss() } label: {
                     Image(systemName: "xmark").frame(width: 44, height: 44).calmSurface(radius: 22)
                 }
-                .accessibilityLabel("Close music selection").accessibilityIdentifier("music.close")
+                .accessibilityLabel(String(localized: "Close music selection")).accessibilityIdentifier("music.close")
             }
             .padding(.horizontal, 24).padding(.top, 24)
             ScrollView {
@@ -83,7 +83,7 @@ struct MusicSelectionView: View {
                 .frame(maxWidth: .infinity, minHeight: 64).contentShape(Rectangle())
             }
             .accessibilityLabel("\(track.title), \(track.durationLabel)")
-            .accessibilityValue(chosen ? "Selected" : "Not selected")
+            .accessibilityValue(chosen ? String(localized: "Selected") : String(localized: "Not selected"))
             .accessibilityIdentifier("music.select.\(track.number)")
             Button {
                 selected = track
@@ -98,7 +98,7 @@ struct MusicSelectionView: View {
                 Image(systemName: playing ? "pause.fill" : "play.fill")
                     .font(.body).frame(width: 52, height: 52).calmSurface(radius: 26)
             }
-            .accessibilityLabel("\(playing ? "Pause" : "Preview") \(track.title)")
+            .accessibilityLabel("\(playing ? String(localized: "Pause") : String(localized: "Preview")) \(track.title)")
             .accessibilityIdentifier("music.preview.\(track.number)")
             .disabled(track.duration <= 0)
         }

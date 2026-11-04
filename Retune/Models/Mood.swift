@@ -3,7 +3,14 @@ import SwiftUI
 enum Mood: String, CaseIterable, Identifiable, Hashable {
     case anxiety, anger, sadness, disappointment
     var id: String { rawValue }
-    var title: String { rawValue.capitalized }
+    var title: String {
+        switch self {
+        case .anxiety: String(localized: "Anxiety")
+        case .anger: String(localized: "Anger")
+        case .sadness: String(localized: "Sadness")
+        case .disappointment: String(localized: "Disappointment")
+        }
+    }
     var symbol: String {
         switch self {
         case .anxiety: "wind"
@@ -14,10 +21,10 @@ enum Mood: String, CaseIterable, Identifiable, Hashable {
     }
     var invitation: String {
         switch self {
-        case .anxiety: "A little room to breathe."
-        case .anger: "Let the edges soften."
-        case .sadness: "Make space for a little light."
-        case .disappointment: "Gently, piece by piece."
+        case .anxiety: String(localized: "A little room to breathe.")
+        case .anger: String(localized: "Let the edges soften.")
+        case .sadness: String(localized: "Make space for a little light.")
+        case .disappointment: String(localized: "Gently, piece by piece.")
         }
     }
     var accent: Color {

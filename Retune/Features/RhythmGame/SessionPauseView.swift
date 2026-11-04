@@ -24,9 +24,9 @@ struct SessionPauseView: View {
                             .accessibilityHidden(true)
                         Slider(value: $volume, in: 0...1)
                             .disabled(!musicEnabled)
-                            .tint(.white).accessibilityLabel("Music volume")
-                            .accessibilityValue("\(Int((volume * 100).rounded())) percent")
-                            .accessibilityHint(musicEnabled ? "" : "Turn Music on in Settings to adjust the volume.")
+                            .tint(.white).accessibilityLabel(String(localized: "Music volume"))
+                            .accessibilityValue(String(localized: "\(Int((volume * 100).rounded())) percent"))
+                            .accessibilityHint(musicEnabled ? "" : String(localized: "Turn Music on in Settings to adjust the volume."))
                             .accessibilityIdentifier("pause.volume")
                         Image(systemName: "speaker.wave.3.fill").accessibilityHidden(true)
                     }
@@ -49,7 +49,7 @@ struct SessionPauseView: View {
                             .frame(maxWidth: .infinity, minHeight: 56)
                             .calmSurface(radius: 28)
                     }
-                    .accessibilityHint("Ends this experience and returns to mood selection.")
+                    .accessibilityHint(String(localized: "Ends this experience and returns to mood selection."))
                     .accessibilityIdentifier("pause.finish")
                 }
             }

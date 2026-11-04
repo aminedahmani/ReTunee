@@ -63,7 +63,7 @@ final class MusicPlayer: NSObject, AVAudioPlayerDelegate {
             trackID = track.id
             return true
         } catch {
-            errorMessage = "This track couldn’t play. Please choose another."
+            errorMessage = String(localized: "This track couldn’t play. Please choose another.")
             return false
         }
     }
@@ -97,7 +97,7 @@ final class MusicPlayer: NSObject, AVAudioPlayerDelegate {
                 self.isPlaying = true
             } catch {
                 guard !Task.isCancelled, let self, self.playbackRequest == request else { return }
-                self.errorMessage = "Music couldn’t start. Please try again."
+                self.errorMessage = String(localized: "Music couldn’t start. Please try again.")
                 self.pause(fade: false)
             }
         }

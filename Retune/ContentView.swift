@@ -33,7 +33,7 @@ struct ContentView: View {
                                 .frame(width: 56, height: 56).calmSurface(radius: 28)
                         }
                         .buttonStyle(QuietButtonStyle())
-                        .accessibilityLabel("Settings").accessibilityIdentifier("home.settings")
+                        .accessibilityLabel(String(localized: "Settings")).accessibilityIdentifier("home.settings")
                     }
                     GeometryReader { grid in
                         let wide = grid.size.width > grid.size.height * 2
@@ -103,7 +103,7 @@ struct ContentView: View {
             Button { showingGuide = true } label: {
                 menuLabel("Guide", symbol: "questionmark.circle")
             }
-            .accessibilityHint("Review how to use ReTune.")
+            .accessibilityHint(String(localized: "Review how to use ReTune."))
             .accessibilityIdentifier("home.guide")
         }
         .padding(5)
@@ -111,7 +111,7 @@ struct ContentView: View {
         .buttonStyle(QuietButtonStyle())
     }
 
-    private func menuLabel(_ title: String, symbol: String) -> some View {
+    private func menuLabel(_ title: LocalizedStringKey, symbol: String) -> some View {
         VStack(spacing: 3) {
             Image(systemName: symbol)
                 .font(.system(size: 21, weight: .medium))
