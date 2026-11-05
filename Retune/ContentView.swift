@@ -82,8 +82,58 @@ struct ContentView: View {
                 }
             }
         }
+        .onOpenURL { url in
+            handleDeepLink(url)
+        }
         .tint(.white)
         .preferredColorScheme(.dark)
+    }
+
+    private func handleDeepLink(_ url: URL) {
+        guard url.scheme == "retune" else { return }
+        let parts = ([url.host].compactMap { $0 } + url.pathComponents.filter { $0 != "/" })
+            .map { $0.lowercased() }
+
+        var resolvedMood: Mood?
+        for part in parts {
+            if let mood = Mood(rawValue: part) {
+                resolvedMood = mood
+                break
+            } else if part == "breathe" {
+                resolvedMood = .anxiety
+                break
+            }
+        }
+
+        guard let mood = resolvedMood else { return }
+
+        // Close any presented sheets and clear queued track
+        showingSettings = false
+        showingExplore = false
+        showingGuide = false
+        pendingTrack = nil
+
+        let isDirectPlay = parts.contains("play") || parts.contains("breathe")
+
+        if isDirectPlay {
+            // Direct launch into the rhythm game
+            choosingMood = nil
+            let track = MusicTrack.preferred(for: mood)
+            path = [track]
+        } else {
+            // Open song selection screen for this mood
+            if !path.isEmpty {
+                path.removeAll()
+            }
+            if choosingMood != nil && choosingMood != mood {
+                choosingMood = nil
+                DispatchQueue.main.async {
+                    self.choosingMood = mood
+                }
+            } else {
+                choosingMood = mood
+            }
+        }
     }
 
     private func beginChosenTrack() {

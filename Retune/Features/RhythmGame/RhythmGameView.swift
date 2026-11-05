@@ -57,7 +57,12 @@ struct RhythmGameView: View {
         .toolbar(.hidden, for: .navigationBar)
         .onAppear { reconcileActivity() }
         .onChange(of: scenePhase) { _, phase in
-            if phase != .active { music.pause(fade: false) }
+            if phase != .active {
+                music.pause(fade: false)
+                CalmHapticEngine.shared.stop()
+            } else {
+                CalmHapticEngine.shared.ensureRunning()
+            }
             reconcileActivity()
         }
         .onChange(of: showingSettings) { _, _ in reconcileActivity() }
@@ -86,13 +91,16 @@ struct RhythmGameView: View {
             SessionPauseView(track: track, musicEnabled: music.musicEnabled,
                              volume: Binding(get: { music.volume }, set: { music.setVolume($0) }),
                              onResume: { showingPause = false }, onFinish: {
+                if preferences.haptics { CalmHapticEngine.shared.playSessionCompletion() }
                 finishAfterPause = true
                 showingPause = false
             })
 
         }
-        .sensoryFeedback(trigger: model.tapEvent) { _, _ in
-            preferences.haptics ? .impact(weight: .light, intensity: model.hapticIntensity) : nil
+        .onChange(of: model.tapEvent) { _, _ in
+            if preferences.haptics {
+                CalmHapticEngine.shared.playOrbTap(energy: model.hapticIntensity)
+            }
         }
     }
     private func playfield(_ snapshot: PacingSnapshot) -> some View {
