@@ -1,19 +1,39 @@
 {
   "sourceLanguage": "en",
   "strings": {
-    "%lld percent": {
-      "extractionState": "manual",
+    "%@ %@": {
       "localizations": {
         "en": {
           "stringUnit": {
-            "state": "translated",
-            "value": "%lld percent"
+            "state": "new",
+            "value": "%1$@ %2$@"
           }
-        },
+        }
+      }
+    },
+    "%@, %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@, %2$@"
+          }
+        }
+      }
+    },
+    "%lld percent": {
+      "extractionState": "manual",
+      "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld Prozent"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld percent"
           }
         },
         "es": {
@@ -57,16 +77,16 @@
     "A gentle touch": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A gentle touch"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Eine sanfte Berührung"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A gentle touch"
           }
         },
         "es": {
@@ -110,16 +130,16 @@
     "A little room to breathe.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A little room to breathe."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Ein wenig Raum zum Atmen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A little room to breathe."
           }
         },
         "es": {
@@ -163,16 +183,16 @@
     "Accessibility": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Accessibility"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Bedienungshilfen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accessibility"
           }
         },
         "es": {
@@ -216,16 +236,16 @@
     "Anger": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anger"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Wut"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anger"
           }
         },
         "es": {
@@ -269,16 +289,16 @@
     "Anxiety": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anxiety"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Angst"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anxiety"
           }
         },
         "es": {
@@ -322,13 +342,13 @@
     "Aurora": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Aurora"
           }
         },
-        "de": {
+        "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Aurora"
@@ -375,16 +395,16 @@
     "Back to moods": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Back to moods"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Zurück zu Stimmungen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back to moods"
           }
         },
         "es": {
@@ -428,16 +448,16 @@
     "Background animation": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Background animation"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Hintergrundanimation"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Background animation"
           }
         },
         "es": {
@@ -481,16 +501,16 @@
     "Begin Again": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Begin Again"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Noch einmal"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Begin Again"
           }
         },
         "es": {
@@ -534,16 +554,16 @@
     "Choose your mood": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choose your mood"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Wähle deine Stimmung"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your mood"
           }
         },
         "es": {
@@ -587,16 +607,16 @@
     "Choose your music": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choose your music"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Wähle deine Musik"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your music"
           }
         },
         "es": {
@@ -640,16 +660,16 @@
     "Close": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Close"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Schließen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
           }
         },
         "es": {
@@ -693,16 +713,16 @@
     "Close music selection": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Close music selection"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Musikauswahl schließen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close music selection"
           }
         },
         "es": {
@@ -746,16 +766,16 @@
     "Cool Air": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cool Air"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Kühle Luft"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cool Air"
           }
         },
         "es": {
@@ -799,16 +819,16 @@
     "Daybreak": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Daybreak"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Tagesanbruch"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daybreak"
           }
         },
         "es": {
@@ -852,16 +872,16 @@
     "Deep Ocean": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deep Ocean"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Tiefer Ozean"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deep Ocean"
           }
         },
         "es": {
@@ -905,16 +925,16 @@
     "Disappointment": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Disappointment"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Enttäuschung"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disappointment"
           }
         },
         "es": {
@@ -958,16 +978,16 @@
     "Done": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Done"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Fertig"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
           }
         },
         "es": {
@@ -1011,16 +1031,16 @@
     "Drift": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Drift"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Treiben"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drift"
           }
         },
         "es": {
@@ -1064,16 +1084,16 @@
     "Each tap reveals the next light. Anxiety, Anger, and Disappointment slow down. Sadness gently speeds up.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Each tap reveals the next light. Anxiety, Anger, and Disappointment slow down. Sadness gently speeds up."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Jedes Antippen enthüllt das nächste Licht. Angst, Wut und Enttäuschung verlangsamen sich. Traurigkeit wird sanft schneller."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each tap reveals the next light. Anxiety, Anger, and Disappointment slow down. Sadness gently speeds up."
           }
         },
         "es": {
@@ -1117,16 +1137,16 @@
     "Ends this experience and returns to mood selection.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ends this experience and returns to mood selection."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Beendet dieses Erlebnis und kehrt zur Stimmungsauswahl zurück."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ends this experience and returns to mood selection."
           }
         },
         "es": {
@@ -1170,16 +1190,16 @@
     "Every look is here for you. Choose what feels good.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Every look is here for you. Choose what feels good."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Jeder Look ist für dich da. Wähle, was sich gut anfühlt."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every look is here for you. Choose what feels good."
           }
         },
         "es": {
@@ -1223,16 +1243,16 @@
     "Experience": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Experience"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Erlebnis"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Experience"
           }
         },
         "es": {
@@ -1276,16 +1296,16 @@
     "Explore": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Explore"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Erkunden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explore"
           }
         },
         "es": {
@@ -1329,16 +1349,16 @@
     "Find your sound": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Find your sound"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Finde deinen Klang"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find your sound"
           }
         },
         "es": {
@@ -1382,16 +1402,16 @@
     "First Light": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "First Light"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Erstes Licht"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First Light"
           }
         },
         "es": {
@@ -1435,16 +1455,16 @@
     "Fixed tap button": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fixed tap button"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Feste Tipp-Taste"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixed tap button"
           }
         },
         "es": {
@@ -1488,16 +1508,16 @@
     "Floating Dust": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Floating Dust"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Schwebender Staub"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floating Dust"
           }
         },
         "es": {
@@ -1541,16 +1561,16 @@
     "Gentle Sparkles": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gentle Sparkles"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Sanftes Funkeln"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gentle Sparkles"
           }
         },
         "es": {
@@ -1594,16 +1614,16 @@
     "Gently, piece by piece.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gently, piece by piece."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Sanft, Stück für Stück."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gently, piece by piece."
           }
         },
         "es": {
@@ -1647,16 +1667,16 @@
     "Get started": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Get started"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Loslegen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get started"
           }
         },
         "es": {
@@ -1700,16 +1720,16 @@
     "Glass": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Glass"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Glas"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Glass"
           }
         },
         "es": {
@@ -1753,16 +1773,16 @@
     "Glowing orb": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Glowing orb"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Leuchtende Kugel"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Glowing orb"
           }
         },
         "es": {
@@ -1806,16 +1826,16 @@
     "Guide": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Guide"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Anleitung"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guide"
           }
         },
         "es": {
@@ -1859,16 +1879,16 @@
     "Haptics": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Haptics"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Haptik"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptics"
           }
         },
         "es": {
@@ -1912,16 +1932,16 @@
     "How do you feel?": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "How do you feel?"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Wie fühlst du dich?"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do you feel?"
           }
         },
         "es": {
@@ -1965,16 +1985,16 @@
     "I feel better": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "I feel better"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Mir geht es besser"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I feel better"
           }
         },
         "es": {
@@ -2018,16 +2038,16 @@
     "Let the edges soften.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Let the edges soften."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Lass die Kanten weicher werden."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let the edges soften."
           }
         },
         "es": {
@@ -2071,16 +2091,16 @@
     "Make it yours": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Make it yours"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Mach es zu deinem"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make it yours"
           }
         },
         "es": {
@@ -2124,16 +2144,16 @@
     "Make space for a little light.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Make space for a little light."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Schaffe Platz für ein wenig Licht."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make space for a little light."
           }
         },
         "es": {
@@ -2177,16 +2197,16 @@
     "Make this space yours.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Make this space yours."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Mach diesen Raum zu deinem."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make this space yours."
           }
         },
         "es": {
@@ -2230,16 +2250,16 @@
     "Midnight Universe": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Midnight Universe"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Mitternachtsuniversum"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Midnight Universe"
           }
         },
         "es": {
@@ -2283,13 +2303,13 @@
     "Minimal": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Minimal"
           }
         },
-        "de": {
+        "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Minimal"
@@ -2336,16 +2356,16 @@
     "Music": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Music"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Musik"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music"
           }
         },
         "es": {
@@ -2389,16 +2409,16 @@
     "Music couldn’t start. Please try again.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Music couldn’t start. Please try again."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Musik konnte nicht gestartet werden. Bitte versuche es erneut."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music couldn’t start. Please try again."
           }
         },
         "es": {
@@ -2442,16 +2462,16 @@
     "Music unavailable": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Music unavailable"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Musik nicht verfügbar"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music unavailable"
           }
         },
         "es": {
@@ -2495,16 +2515,16 @@
     "Music volume": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Music volume"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Musiklautstärke"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music volume"
           }
         },
         "es": {
@@ -2548,16 +2568,16 @@
     "Nebula": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nebula"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Nebel"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nebula"
           }
         },
         "es": {
@@ -2601,16 +2621,16 @@
     "New Leaf": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "New Leaf"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Neuanfang"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Leaf"
           }
         },
         "es": {
@@ -2654,16 +2674,16 @@
     "Next": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Next"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Weiter"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
           }
         },
         "es": {
@@ -2707,16 +2727,16 @@
     "Not selected": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not selected"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Nicht ausgewählt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not selected"
           }
         },
         "es": {
@@ -2760,16 +2780,16 @@
     "Open Sky": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open Sky"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Offener Himmel"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Sky"
           }
         },
         "es": {
@@ -2813,16 +2833,16 @@
     "Opens a gentle, endless relaxation experience. %@": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opens a gentle, endless relaxation experience. %@"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Öffnet ein sanftes, endloses Entspannungserlebnis. %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens a gentle, endless relaxation experience. %@"
           }
         },
         "es": {
@@ -2866,13 +2886,13 @@
     "Pause": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Pause"
           }
         },
-        "de": {
+        "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Pause"
@@ -2919,16 +2939,16 @@
     "Pause experience": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pause experience"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Erlebnis pausieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause experience"
           }
         },
         "es": {
@@ -2972,16 +2992,16 @@
     "Pause to adjust volume. Choose “I feel better” whenever you want to finish.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pause to adjust volume. Choose “I feel better” whenever you want to finish."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Pausiere, um die Lautstärke anzupassen. Wähle „Mir geht es besser“, wenn du beenden möchtest."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause to adjust volume. Choose “I feel better” whenever you want to finish."
           }
         },
         "es": {
@@ -3025,16 +3045,16 @@
     "Paused": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Paused"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Pausiert"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paused"
           }
         },
         "es": {
@@ -3078,16 +3098,16 @@
     "Pearl": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pearl"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Perle"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pearl"
           }
         },
         "es": {
@@ -3131,16 +3151,16 @@
     "Please choose another track.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Please choose another track."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Bitte wähle einen anderen Titel."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please choose another track."
           }
         },
         "es": {
@@ -3184,16 +3204,16 @@
     "Preview": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preview"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Vorschau"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview"
           }
         },
         "es": {
@@ -3237,16 +3257,16 @@
     "Preview three tracks for your mood. Choose your favorite and tap Start.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preview three tracks for your mood. Choose your favorite and tap Start."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Höre drei Tracks für deine Stimmung zur Probe. Wähle deinen Favoriten und tippe auf Start."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview three tracks for your mood. Choose your favorite and tap Start."
           }
         },
         "es": {
@@ -3290,16 +3310,16 @@
     "Quiet Sky": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Quiet Sky"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Ruhiger Himmel"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quiet Sky"
           }
         },
         "es": {
@@ -3340,72 +3360,19 @@
         }
       }
     },
-    "ReTune": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ReTune"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ReTune"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ReTune"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ReTune"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ReTune"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ReTune"
-          }
-        },
-        "pt": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ReTune"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ReTune"
-          }
-        }
-      }
-    },
     "Reduce Motion": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reduce Motion"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Bewegung reduzieren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reduce Motion"
           }
         },
         "es": {
@@ -3449,16 +3416,16 @@
     "Release": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Release"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Loslassen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Release"
           }
         },
         "es": {
@@ -3502,16 +3469,16 @@
     "Releases the current orb from this fixed button.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Releases the current orb from this fixed button."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Gibt die aktuelle Kugel über diese feste Taste frei."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Releases the current orb from this fixed button."
           }
         },
         "es": {
@@ -3555,16 +3522,16 @@
     "Releases this light and reveals another. Take your time.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Releases this light and reveals another. Take your time."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Gibt dieses Licht frei und enthüllt ein anderes. Nimm dir Zeit."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Releases this light and reveals another. Take your time."
           }
         },
         "es": {
@@ -3608,16 +3575,16 @@
     "Resume": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Resume"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Fortsetzen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume"
           }
         },
         "es": {
@@ -3658,19 +3625,72 @@
         }
       }
     },
-    "Review how to use ReTune.": {
+    "ReTune": {
       "extractionState": "manual",
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ReTune"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Review how to use ReTune."
+            "value": "ReTune"
           }
         },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ReTune"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ReTune"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ReTune"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ReTune"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ReTune"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ReTune"
+          }
+        }
+      }
+    },
+    "Review how to use ReTune.": {
+      "extractionState": "manual",
+      "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Nutzung von ReTune wiederholen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Review how to use ReTune."
           }
         },
         "es": {
@@ -3714,16 +3734,16 @@
     "Sadness": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sadness"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Traurigkeit"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sadness"
           }
         },
         "es": {
@@ -3767,16 +3787,16 @@
     "Selected": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Selected"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Ausgewählt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selected"
           }
         },
         "es": {
@@ -3820,16 +3840,16 @@
     "Settings": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Settings"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Einstellungen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
           }
         },
         "es": {
@@ -3873,16 +3893,16 @@
     "Skip": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skip"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Überspringen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip"
           }
         },
         "es": {
@@ -3926,16 +3946,16 @@
     "Skip opening animation.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skip opening animation."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Eröffnungsanimation überspringen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip opening animation."
           }
         },
         "es": {
@@ -3979,16 +3999,16 @@
     "Small Steps": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Small Steps"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Kleine Schritte"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Small Steps"
           }
         },
         "es": {
@@ -4032,16 +4052,16 @@
     "Soft Ember": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Soft Ember"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Sanfte Glut"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soft Ember"
           }
         },
         "es": {
@@ -4085,16 +4105,16 @@
     "Soft Glow": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Soft Glow"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Sanftes Leuchten"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soft Glow"
           }
         },
         "es": {
@@ -4138,16 +4158,16 @@
     "Soft Nebula": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Soft Nebula"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Sanfte Nebelwolke"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soft Nebula"
           }
         },
         "es": {
@@ -4191,16 +4211,16 @@
     "Soft Ripple": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Soft Ripple"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Sanfte Wellen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soft Ripple"
           }
         },
         "es": {
@@ -4244,16 +4264,16 @@
     "Sound": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sound"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Ton"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound"
           }
         },
         "es": {
@@ -4297,13 +4317,13 @@
     "Start": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Start"
           }
         },
-        "de": {
+        "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Start"
@@ -4350,16 +4370,16 @@
     "Start with how you feel: Anxiety, Anger, Sadness, or Disappointment.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Start with how you feel: Anxiety, Anger, Sadness, or Disappointment."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Beginne damit, wie du dich fühlst: Angst, Wut, Traurigkeit oder Enttäuschung."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start with how you feel: Anxiety, Anger, Sadness, or Disappointment."
           }
         },
         "es": {
@@ -4403,16 +4423,16 @@
     "Step %lld of %lld": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Step %lld of %lld"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Schritt %lld von %lld"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %lld of %lld"
           }
         },
         "es": {
@@ -4456,16 +4476,16 @@
     "Stillness": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stillness"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Stille"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stillness"
           }
         },
         "es": {
@@ -4509,16 +4529,16 @@
     "Tap": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tap"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Tippen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap"
           }
         },
         "es": {
@@ -4562,16 +4582,16 @@
     "Tap orb": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tap orb"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Kugel antippen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap orb"
           }
         },
         "es": {
@@ -4615,16 +4635,16 @@
     "Tap the light": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tap the light"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Tippe das Licht an"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the light"
           }
         },
         "es": {
@@ -4668,16 +4688,16 @@
     "This track couldn’t play. Please choose another.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This track couldn’t play. Please choose another."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Dieser Titel konnte nicht abgespielt werden. Bitte wähle einen anderen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This track couldn’t play. Please choose another."
           }
         },
         "es": {
@@ -4721,16 +4741,16 @@
     "Turn Music on in Settings to adjust the volume.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Turn Music on in Settings to adjust the volume."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Musik in den Einstellungen einschalten, um die Lautstärke anzupassen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn Music on in Settings to adjust the volume."
           }
         },
         "es": {
@@ -4774,16 +4794,16 @@
     "Turn Music on to adjust the volume.": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Turn Music on to adjust the volume."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Musik einschalten, um die Lautstärke anzupassen."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn Music on to adjust the volume."
           }
         },
         "es": {
@@ -4827,16 +4847,16 @@
     "Volume": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Volume"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Lautstärke"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume"
           }
         },
         "es": {
@@ -4880,16 +4900,16 @@
     "Your light": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your light"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Dein Licht"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your light"
           }
         },
         "es": {
@@ -4933,16 +4953,16 @@
     "Your universe": {
       "extractionState": "manual",
       "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your universe"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Dein Universum"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your universe"
           }
         },
         "es": {
@@ -4979,6 +4999,377 @@
           "stringUnit": {
             "state": "translated",
             "value": "你的宇宙"
+          }
+        }
+      }
+    },
+    "Take a calming pause and tune into your emotions.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take a calming pause and tune into your emotions."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prenditi una pausa rilassante e sintonizzati con le tue emozioni."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tómate una pausa relajante y sintoniza con tus emociones."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faites une pause apaisante et connectez-vous à vos émotions."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gönn dir eine beruhigende Pause und spüre in deine Emotionen hinein."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faça uma pausa relaxante e sintonize com as suas emoções."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "心落ち着く休息をとり、自分の感情に耳を傾けましょう。"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "放慢脚步，沉静片刻，倾听内心的感受。"
+          }
+        }
+      }
+    },
+    "Start session": {
+      "extractionState": "manual",
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inizia sessione"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start session"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciar sesión"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Démarrer la séance"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sitzung starten"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciar sessão"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "セッションを開始"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开始练习"
+          }
+        }
+      }
+    },
+    "Daily Harmony": {
+      "extractionState": "manual",
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Armonia quotidiana"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily Harmony"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Armonía diaria"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Harmonie quotidienne"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tägliche Harmonie"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Harmonia diária"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "毎日の調和"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每日和谐"
+          }
+        }
+      }
+    },
+    "Breathe": {
+      "extractionState": "manual",
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respira"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Breathe"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respira"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respirer"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atmen"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respirar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "呼吸"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "呼吸"
+          }
+        }
+      }
+    },
+    "Soothe": {
+      "extractionState": "manual",
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calma"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soothe"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calma"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apaiser"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beruhigen"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acalmar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "和らげる"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "舒缓"
+          }
+        }
+      }
+    },
+    "Light": {
+      "extractionState": "manual",
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luce"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luz"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lumière"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Licht"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luz"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "光"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "微光"
+          }
+        }
+      }
+    },
+    "Restore": {
+      "extractionState": "manual",
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Armonia"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recomponer"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurer"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Harmonie"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "整える"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "重塑"
           }
         }
       }

@@ -58,6 +58,9 @@ struct LaunchExperienceView: View {
         .onChange(of: reduceMotion) { _, reduced in
             if reduced { finishLaunch() }
         }
+        .onOpenURL { _ in
+            finishLaunch()
+        }
     }
 
     private func finishLaunch() { showingLaunch = false }
